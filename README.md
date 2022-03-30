@@ -2,4 +2,4 @@
 learning git and python
 
 
-- [ ] testeee
+- [x] testeee
