@@ -3,7 +3,7 @@ learning git and python
 
 #Basic Snake game
 
-- [ ] Create game window
+- [x] Create game window
 - [ ] Add snake
 - [ ] Move snake
 - [ ] Add fps
