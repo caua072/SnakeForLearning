@@ -24,7 +24,7 @@ snake_skin.fill((255, 255, 255))
 apple = pygame.Surface((10, 10))
 apple.fill((255, 0, 0))
 
-apple_pos = ((random.randint(0, 500), random.randint(0, 500)))
+apple_pos = ((random.randint(0, 500)//10 * 10, random.randint(0, 500)//10 * 10))
 
 while loop:
 
@@ -53,6 +53,10 @@ while loop:
     for pos in snake:
         screen.blit(snake_skin, pos)
 
+    for i in range(len(snake) - 1, 0, -1):
+        snake[i] = (snake[i - 1][0], snake[i - 1][1])
+    
+
     if my_dir == RIGHT:
         snake[0] = (snake[0][0] + 10, snake[0][1])
 
@@ -63,9 +67,7 @@ while loop:
     if my_dir == DOWN:
         snake[0] = (snake[0][0], snake[0][1] + 10)
 
-    for i in range(len(snake) - 1, 0, -1):
-        snake[i] = (snake[i - 1][0], snake[i - 1][1])
-    
+
     screen.blit(apple, apple_pos)
 
     pygame.display.update()

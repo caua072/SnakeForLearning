@@ -8,9 +8,10 @@ learning git and python
 - [x] Move snake
 - [x] Add fps
 - [x] Add apple/point
-- [ ] Solve apple grid problem
+- [x] Solve apple grid problem
 - [ ] Add collisions in apple
 - [ ] Add collision to walls and other segments of the player
 - [ ] Add grid
 - [ ] Add score
 - [ ] Add gameover
+- [x] Performance improvement
