@@ -24,7 +24,10 @@ snake_skin.fill((255, 255, 255))
 apple = pygame.Surface((10, 10))
 apple.fill((255, 0, 0))
 
-apple_pos = ((random.randint(0, 500)//10 * 10, random.randint(0, 500)//10 * 10))
+#apple_pos = ((random.randint(0, 500)//10 * 10, random.randint(0, 500)//10 * 10))
+#apple_pos = ((random.randrange(0, 500, 10), random.randrange(0, 500, 10)))
+apple_pos = ((random.randint(0, 50) * 10, random.randint(0,50) * 10))
+print(apple_pos)
 
 while loop:
 
