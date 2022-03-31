@@ -1,4 +1,4 @@
-import pygame
+import pygame, random
 from pygame.locals import *
 
 UP = 0
@@ -20,6 +20,11 @@ clock = pygame.time.Clock()
 snake = [(200, 200), (210,200), (220, 200)]
 snake_skin = pygame.Surface((10, 10))
 snake_skin.fill((255, 255, 255))
+
+apple = pygame.Surface((10, 10))
+apple.fill((255, 0, 0))
+
+apple_pos = ((random.randint(0, 500), random.randint(0, 500)))
 
 while loop:
 
@@ -60,5 +65,7 @@ while loop:
 
     for i in range(len(snake) - 1, 0, -1):
         snake[i] = (snake[i - 1][0], snake[i - 1][1])
+    
+    screen.blit(apple, apple_pos)
 
     pygame.display.update()
