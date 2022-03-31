@@ -5,7 +5,7 @@ learning git and python
 
 - [x] Create game window
 - [x] Add snake
-- [x] Move snake
+- [] Move snake
 - [ ] Add fps
 - [ ] Add apple/point
 - [ ] Add collisions in apple
