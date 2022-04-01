@@ -9,7 +9,7 @@ learning git and python
 - [x] Add fps
 - [x] Add apple/point
 - [x] Solve apple grid problem
-- [ ] Add collisions in apple
+- [x] Add collisions in apple
 - [ ] Add collision to walls and other segments of the player
 - [ ] Add grid
 - [ ] Add score

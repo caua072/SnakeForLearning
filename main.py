@@ -1,6 +1,11 @@
 import pygame, random
 from pygame.locals import *
 
+def collisions(obj1, obj2):
+    
+    return((obj1[0] == obj2[0]) and (obj1[1] == obj2[1]))
+
+
 UP = 0
 RIGHT = 1
 DOWN = 2
@@ -26,7 +31,7 @@ apple.fill((255, 0, 0))
 
 #apple_pos = ((random.randint(0, 500)//10 * 10, random.randint(0, 500)//10 * 10))
 #apple_pos = ((random.randrange(0, 500, 10), random.randrange(0, 500, 10)))
-apple_pos = ((random.randint(0, 50) * 10, random.randint(0,50) * 10))
+apple_pos = ((random.randint(0, 49) * 10, random.randint(0,49) * 10))
 print(apple_pos)
 
 while loop:
@@ -52,6 +57,10 @@ while loop:
                 my_dir = DOWN
             if event.key == pygame.K_a:
                 my_dir = LEFT
+
+    if collisions(snake[0], apple_pos):
+        snake.append((-10,-10))
+        apple_pos = ((random.randint(0, 49) * 10, random.randint(0,49) * 10))
 
     for pos in snake:
         screen.blit(snake_skin, pos)
