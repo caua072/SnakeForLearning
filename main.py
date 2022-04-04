@@ -1,21 +1,23 @@
-import pygame, random
+import pygame, random, time
 from pygame.locals import *
 
 def collisions(obj1, obj2):
     
     return((obj1[0] == obj2[0]) and (obj1[1] == obj2[1]))
-
+    
 
 UP = 0
 RIGHT = 1
 DOWN = 2
 LEFT = 3
 
-my_dir = RIGHT
+color = (255, 255, 255)
+
+my_dir = LEFT
 
 pygame.init()
 
-screen = pygame.display.set_mode([500, 500])
+screen = pygame.display.set_mode([400, 400])
 pygame.display.set_caption('Snakegame')
 
 loop = True
@@ -24,14 +26,14 @@ clock = pygame.time.Clock()
 
 snake = [(200, 200), (210,200), (220, 200)]
 snake_skin = pygame.Surface((10, 10))
-snake_skin.fill((255, 255, 255))
+snake_skin.fill(color)
 
 apple = pygame.Surface((10, 10))
 apple.fill((255, 0, 0))
 
 #apple_pos = ((random.randint(0, 500)//10 * 10, random.randint(0, 500)//10 * 10))
 #apple_pos = ((random.randrange(0, 500, 10), random.randrange(0, 500, 10)))
-apple_pos = ((random.randint(0, 49) * 10, random.randint(0,49) * 10))
+apple_pos = ((random.randint(0, 40) * 10, random.randint(0,40) * 10))
 print(apple_pos)
 
 while loop:
@@ -60,13 +62,11 @@ while loop:
 
     if collisions(snake[0], apple_pos):
         snake.append((-10,-10))
-        apple_pos = ((random.randint(0, 49) * 10, random.randint(0,49) * 10))
+        apple_pos = ((random.randint(0, 40) * 10, random.randint(0,40) * 10))
+        print(apple_pos)
 
     for pos in snake:
         screen.blit(snake_skin, pos)
-
-    for i in range(len(snake) - 1, 0, -1):
-        snake[i] = (snake[i - 1][0], snake[i - 1][1])
     
 
     if my_dir == RIGHT:
@@ -79,6 +79,25 @@ while loop:
     if my_dir == DOWN:
         snake[0] = (snake[0][0], snake[0][1] + 10)
 
+
+    for x in range(1, len(snake)):
+        if snake[0][0] == snake[x][0] and snake[0][1] == snake[x][1]:
+            pygame.time.wait(1000)
+            pygame.quit()
+            exit()
+    
+    for i in range(len(snake) - 1, 0, -1):
+        snake[i] = (snake[i - 1][0], snake[i - 1][1])
+    
+    if snake[0][0] >= 400 or snake[0][0] <= 0:
+        pygame.time.delay(1000)
+        pygame.quit()
+        exit()
+    elif snake[0][1] >= 400 or snake[0][1] <= 0:
+        pygame.time.delay(1000)
+        pygame.quit()
+        exit()
+        
 
     screen.blit(apple, apple_pos)
 

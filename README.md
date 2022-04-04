@@ -10,8 +10,14 @@ learning git and python
 - [x] Add apple/point
 - [x] Solve apple grid problem
 - [x] Add collisions in apple
-- [ ] Add collision to walls and other segments of the player
+- [x] Add collision to walls and other segments of the player
 - [ ] Add grid
 - [ ] Add score
 - [ ] Add gameover
 - [x] Performance improvement
+
+# Bugs
+
+- [ ] Borders of the window not correct
+- [ ] Bug at the spawn of the snake
+- [ ] Apple spawning out of the window range
