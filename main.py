@@ -4,7 +4,15 @@ from pygame.locals import *
 def collisions(obj1, obj2):
     
     return((obj1[0] == obj2[0]) and (obj1[1] == obj2[1]))
-    
+
+def Text(font_dir, size, text, color, x, y):
+
+    font = pygame.font.Font(font_dir, size)
+
+    font_render = font.render(text, True, color)
+    font_rect = font_render.get_rect()
+    font_rect = (x, y)
+    screen.blit(font_render, font_rect)
 
 UP = 0
 RIGHT = 1
@@ -35,6 +43,8 @@ apple.fill((255, 0, 0))
 #apple_pos = ((random.randrange(0, 500, 10), random.randrange(0, 500, 10)))
 apple_pos = ((random.randint(0, 40) * 10, random.randint(0,40) * 10))
 print(apple_pos)
+
+pts = 0
 
 while loop:
 
@@ -69,6 +79,8 @@ while loop:
     if collisions(snake[0], apple_pos):
         snake.append((-10,-10))
         apple_pos = ((random.randint(0, 40) * 10, random.randint(0,40) * 10))
+        pts += 1
+        print(pts)
         print(apple_pos)
     
 
@@ -106,5 +118,7 @@ while loop:
         pygame.draw.line(screen, (40, 40, 40), (0, y), (400, y))
 
     screen.blit(apple, apple_pos)
+
+    score = Text('font/font.ttf', 24, 'Score: %s' % (pts), (54, 186, 158), 10, 10)
 
     pygame.display.update()
