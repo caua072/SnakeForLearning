@@ -11,7 +11,7 @@ learning git and python
 - [x] Solve apple grid problem
 - [x] Add collisions in apple
 - [x] Add collision to walls and other segments of the player
-- [ ] Add grid
+- [x] Add grid
 - [ ] Add score
 - [ ] Add gameover
 - [x] Performance improvement

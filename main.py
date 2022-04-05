@@ -60,13 +60,16 @@ while loop:
             if event.key == pygame.K_a:
                 my_dir = LEFT
 
+    for pos in snake:
+        screen.blit(snake_skin, pos)
+
+    for i in range(len(snake) - 1, 0, -1):
+        snake[i] = (snake[i - 1][0], snake[i - 1][1])
+
     if collisions(snake[0], apple_pos):
         snake.append((-10,-10))
         apple_pos = ((random.randint(0, 40) * 10, random.randint(0,40) * 10))
         print(apple_pos)
-
-    for pos in snake:
-        screen.blit(snake_skin, pos)
     
 
     if my_dir == RIGHT:
@@ -86,8 +89,7 @@ while loop:
             pygame.quit()
             exit()
     
-    for i in range(len(snake) - 1, 0, -1):
-        snake[i] = (snake[i - 1][0], snake[i - 1][1])
+    
     
     if snake[0][0] >= 400 or snake[0][0] <= 0:
         pygame.time.delay(1000)
@@ -98,6 +100,10 @@ while loop:
         pygame.quit()
         exit()
         
+    for x in range(0, 400, 10):
+        pygame.draw.line(screen, (40, 40, 40), (x,0), (x, 400))
+    for y in range(0, 400, 10):
+        pygame.draw.line(screen, (40, 40, 40), (0, y), (400, y))
 
     screen.blit(apple, apple_pos)
 
