@@ -1,7 +1,7 @@
 <h1 align="center"> SnakeForLearningGit </h1>
-learning git and python
+Tried to learn Git creating a simple snake game with pygame
 
-#Basic Snake game
+# Basic Snake game
 
 - [x] Create game window
 - [x] Add snake
@@ -22,8 +22,8 @@ learning git and python
 - [x] Bug at the spawn of the snake
 - [ ] Apple spawning out of the window range
 
-# Instalating and running the game
+# Installing and running the game
 
 1. Install python
-2. Pip install pygame
+2. use `pip install pygame` for the pygame library
 3. Run the main.py with `python main.py` in terminal
