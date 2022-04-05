@@ -12,7 +12,7 @@ learning git and python
 - [x] Add collisions in apple
 - [x] Add collision to walls and other segments of the player
 - [x] Add grid
-- [ ] Add score
+- [x] Add score
 - [ ] Add gameover
 - [x] Performance improvement
 
