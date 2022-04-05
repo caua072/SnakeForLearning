@@ -1,4 +1,4 @@
-# SnakeForLearning
+<h1 align="center"> SnakeForLearningGit </h1>
 learning git and python
 
 #Basic Snake game
@@ -21,3 +21,9 @@ learning git and python
 - [ ] Borders of the window not correct
 - [x] Bug at the spawn of the snake
 - [ ] Apple spawning out of the window range
+
+# Instalating and running the game
+
+1. Install python
+2. Pip install pygame
+3. Run the main.py with `python main.py` in terminal
