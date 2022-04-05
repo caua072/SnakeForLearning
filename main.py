@@ -42,7 +42,6 @@ apple.fill((255, 0, 0))
 #apple_pos = ((random.randint(0, 500)//10 * 10, random.randint(0, 500)//10 * 10))
 #apple_pos = ((random.randrange(0, 500, 10), random.randrange(0, 500, 10)))
 apple_pos = ((random.randint(0, 40) * 10, random.randint(0,40) * 10))
-print(apple_pos)
 
 pts = 0
 
@@ -97,6 +96,8 @@ while loop:
 
     for x in range(1, len(snake)):
         if snake[0][0] == snake[x][0] and snake[0][1] == snake[x][1]:
+            gameover = Text('font/font.ttf', 40, 'GAMEOVER', (255, 0, 0), 150, 150)
+            pygame.display.update()
             pygame.time.wait(1000)
             pygame.quit()
             exit()
@@ -104,13 +105,19 @@ while loop:
     
     
     if snake[0][0] >= 400 or snake[0][0] <= 0:
-        pygame.time.delay(1000)
+        gameover = Text('font/font.ttf', 40, 'GAMEOVER', (255, 0, 0), 150, 150)
+        pygame.display.update()
+        pygame.time.wait(1000)
         pygame.quit()
         exit()
+    
     elif snake[0][1] >= 400 or snake[0][1] <= 0:
-        pygame.time.delay(1000)
+        gameover = Text('font/font.ttf', 40, 'GAMEOVER', (255, 0, 0), 150, 150)
+        pygame.display.update()
+        pygame.time.wait(1000)
         pygame.quit()
         exit()
+    
         
     for x in range(0, 400, 10):
         pygame.draw.line(screen, (40, 40, 40), (x,0), (x, 400))

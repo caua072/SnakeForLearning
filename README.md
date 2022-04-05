@@ -13,7 +13,7 @@ learning git and python
 - [x] Add collision to walls and other segments of the player
 - [x] Add grid
 - [x] Add score
-- [ ] Add gameover
+- [x] Add gameover
 - [x] Performance improvement
 
 # Bugs
