@@ -19,5 +19,5 @@ learning git and python
 # Bugs
 
 - [ ] Borders of the window not correct
-- [ ] Bug at the spawn of the snake
+- [x] Bug at the spawn of the snake
 - [ ] Apple spawning out of the window range
